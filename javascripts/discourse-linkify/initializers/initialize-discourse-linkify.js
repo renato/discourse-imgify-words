@@ -2,7 +2,7 @@ import { withPluginApi } from "discourse/lib/plugin-api";
 import { readInputList, traverseNodes } from "../lib/utilities";
 
 export default {
-  name: "discourse-linkify-initializer",
+  name: "discourse-imgify-initializer",
 
   initialize() {
     withPluginApi("0.8.7", (api) => {
@@ -29,13 +29,11 @@ export default {
       });
 
       let createLink = function (text, url) {
-        let link = document.createElement("a");
-        link.innerHTML = text;
-        link.href = url;
-        link.rel = "nofollow";
-        link.target = "_blank";
-        link.className = "linkify-word no-track-link";
-        return link;
+        let img = document.createElement("img");
+        img.alt = text;
+        img.src = url;
+        img.className = "imgify-word";
+        return img;
       };
 
       let Action = function (inputListName, method) {
@@ -44,7 +42,7 @@ export default {
         this.inputs = {};
       };
 
-      let linkify = new Action("linked_words", createLink);
+      let linkify = new Action("words_to_imgify", createLink);
       let actions = [linkify];
       actions.forEach(readInputList);
 
@@ -56,7 +54,7 @@ export default {
             }
           });
         },
-        { id: "linkify-words-theme" }
+        { id: "imgify-words-theme" }
       );
     });
   },

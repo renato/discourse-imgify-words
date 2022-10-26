@@ -1,6 +1,6 @@
 {
-  "name": "Auto linkify words",
+  "name": "Auto imgify words",
   "component": true,
-  "about_url": "https://meta.discourse.org/t/linkify-words-in-post-theme-component/82193",
-  "license_url": "https://github.com/discourse/discourse-linkify-words/blob/main/LICENSE"
+  "about_url": "https://github.com/renato/discourse-imgify-words",
+  "license_url": "https://github.com/renato/discourse-imgify-words/blob/main/LICENSE"
 }

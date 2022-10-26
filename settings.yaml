@@ -1,6 +1,7 @@
-linked_words:
+words_to_imgify:
   type: list
-  default: "discourse,https://www.discourse.org|meta,https://meta.discourse.org"
+  default: ""
+  description: "A list of 'WORD,https://path.to/a.gif' pairs to be imgified"
 excluded_tags:
   type: list
   list_type: compact
